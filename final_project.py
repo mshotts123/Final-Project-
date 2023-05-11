@@ -18,7 +18,10 @@ fig = px.choropleth(df,
                     #need to figure out how to set scale from 0 to 120,000,000
                     )
 #colorbar ticks
-cbar = plt.colorbar(ticks=[0, 120000000])
+fig.layout.coloraxis.colorbar.title.text = "Gross Inflow of Earnings"
+fig.layout.coloraxis.colorbar.tickvals = [0, 120000000]
+fig.layout.coloraxis.cmax = 120000000
+fig.layout.coloraxis.cauto = False
 
 fig.update_layout(
       title_text = '2021 Inflow of Earnings by State',
