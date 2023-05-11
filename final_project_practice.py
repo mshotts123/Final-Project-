@@ -7,6 +7,8 @@ df.rename({'median_sale_price':'Median Sales Price ($)'},axis=1, inplace=True)
 
 
 import plotly.express as px
+print(df.info())
+print(df["state_code"])
 fig = px.choropleth(df,
                     locations='state_code', 
                     locationmode="USA-states", 
